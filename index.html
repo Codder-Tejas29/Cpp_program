@@ -1,0 +1,1594 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TS Creation | C++ Programs</title><style>
+*{box-sizing:border-box}body{margin:0;background:#0b1020;color:#eef3ff;font-family:Arial, sans-serif}
+header{text-align:center;padding:35px 16px;background:linear-gradient(130deg,#172c50,#10172a);border-bottom:1px solid #293956}
+.brand{color:#a9caff;letter-spacing:3px;font-weight:bold;font-size:12px}h1{font-size:clamp(28px,5vw,44px);margin:14px 0 8px}header p{color:#aab8d0;line-height:1.5}
+main{max-width:1000px;margin:25px auto;padding:0 15px}.tools{display:flex;gap:12px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
+input{flex:1;min-width:220px;padding:14px;border:1px solid #30415f;border-radius:11px;background:#121d32;color:white;font-size:16px;outline:none}
+#count{color:#aab8d0;font-size:13px}.card{background:#131e33;border:1px solid #2b3b59;border-radius:14px;margin:16px 0;overflow:hidden}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px}.title{display:flex;align-items:center;gap:12px;min-width:0}
+.num{background:#203b65;color:#b7d3ff;border-radius:10px;padding:13px;font-weight:bold}small{color:#91a9ce;font-size:10px;letter-spacing:2px}h2{font-size:16px;margin:4px 0;overflow-wrap:anywhere}
+button{border:0;border-radius:9px;padding:11px 14px;background:#3479e5;color:white;font-weight:bold;cursor:pointer;white-space:nowrap}button.done{background:#16865d}
+pre{margin:0;padding:16px;background:#080e1a;border-top:1px solid #2b3b59;overflow:auto;color:#dce8ff;font-size:13px;line-height:1.6}code{font-family:Consolas,monospace;white-space:pre}
+#empty{display:none;text-align:center;color:#aab8d0;padding:30px}footer{text-align:center;color:#7789a8;padding:25px;font-size:12px}
+@media(max-width:520px){.top{align-items:flex-start}button{font-size:12px;padding:10px}pre{font-size:12px}}
+</style></head><body><header><div class="brand">TS CREATION</div><h1>C++ Practical Programs</h1><p>Search your program, view the code, and copy it with one tap.</p></header>
+<main><div class="tools"><input id="search" type="search" placeholder="🔎 Search program name or code..." oninput="filterPrograms()"><span id="count">10 programs available</span></div>
+<div id="programs">
+<article class="card" data-search="array.cpp #include &lt;iostream&gt;
+using namespace std;
+
+int queue[100];
+int front = 0;
+int rear = -1;
+int count = 0;
+int m;
+
+void addjob()
+{
+    if (count == m)
+    {
+        cout &lt;&lt; &quot;queue is full !\n&quot;;
+        return;
+    }
+
+    int job;
+    cout &lt;&lt; &quot;enter job number :&quot;;
+    cin &gt;&gt; job;
+
+    rear++;
+    queue[rear] = job;
+    count++;
+
+    cout &lt;&lt; &quot;job added successfully!!\n&quot;;
+}
+
+void deletejob()
+{
+    if (count == 0)
+    {
+        cout &lt;&lt; &quot;queue is empty !!\n&quot;;
+        return;
+    }
+
+    cout &lt;&lt; &quot;deleted j">
+ <div class="top"><div class="title"><span class="num">01</span><div><small>PROGRAM 01</small><h2>array.cpp</h2></div></div>
+ <button onclick="copyCode('code1',this)">⧉ Copy Code</button></div>
+ <pre><code id="code1">#include &lt;iostream&gt;
+using namespace std;
+
+int queue[100];
+int front = 0;
+int rear = -1;
+int count = 0;
+int m;
+
+void addJob()
+{
+    if (count == m)
+    {
+        cout &lt;&lt; &quot;Queue is full !\n&quot;;
+        return;
+    }
+
+    int job;
+    cout &lt;&lt; &quot;Enter Job number :&quot;;
+    cin &gt;&gt; job;
+
+    rear++;
+    queue[rear] = job;
+    count++;
+
+    cout &lt;&lt; &quot;Job added Successfully!!\n&quot;;
+}
+
+void deleteJob()
+{
+    if (count == 0)
+    {
+        cout &lt;&lt; &quot;Queue is Empty !!\n&quot;;
+        return;
+    }
+
+    cout &lt;&lt; &quot;Deleted Job :&quot; &lt;&lt; queue[front] &lt;&lt; endl;
+    front++;
+    count--;
+}
+
+void display()
+{
+    if (count == 0)
+    {
+        cout &lt;&lt; &quot;Queue is Empty !!\n&quot;;
+        return;
+    }
+
+    cout &lt;&lt; &quot;Jobs in Queue:&quot;;
+    for (int i = front; i &lt;= rear; i++)
+    {
+        cout &lt;&lt; queue[i] &lt;&lt; &quot; &quot;;
+    }
+    cout &lt;&lt; endl;
+}
+
+int main()
+{
+    cout &lt;&lt; &quot;Name: Rajule Tejal Vikas\n&quot; &lt;&lt; &quot;Roll No: 225&quot;&lt;&lt;endl;
+    
+    int choice;
+
+    cout &lt;&lt; &quot;Enter Maximum Queue Size:&quot;;
+    cin &gt;&gt; m;
+
+    do
+    {
+        cout &lt;&lt; &quot;\n--- JOB QUEUE ---\n&quot;;
+        cout &lt;&lt; &quot;1. Add Job\n&quot;;
+        cout &lt;&lt; &quot;2. Delete Job\n&quot;;
+        cout &lt;&lt; &quot;3. Display Job\n&quot;;
+        cout &lt;&lt; &quot;4. Exit\n&quot;;
+
+        cout &lt;&lt; &quot;Enter choice:&quot;;
+        cin &gt;&gt; choice;
+
+        if (choice == 1)
+        {
+            int n;
+            cout &lt;&lt; &quot;How many jobs do you want to add:&quot;;
+            cin &gt;&gt; n;
+
+            for (int i = 0; i &lt; n; i++)
+            {
+                addJob();
+            }
+        }
+        else if (choice == 2)
+        {
+            deleteJob();
+        }
+        else if (choice == 3)
+        {
+            display();
+        }
+        else if (choice == 4)
+        {
+            cout &lt;&lt; &quot;Program Ended.\n&quot;;
+        }
+        else
+        {
+            cout &lt;&lt; &quot;Invalid choice!\n&quot;;
+        }
+
+    } while (choice != 4);
+
+    return 0;
+}
+</code></pre>
+</article>
+<article class="card" data-search="bst.cpp #include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+struct node {
+    int data;
+    node* left;
+    node* right;
+
+    node(int val) {
+        data = val;
+        left = nullptr;
+        right = nullptr;
+    }
+};
+
+node* insert(node* root, int val) {
+    
+    if (root == nullptr) {
+        return new node(val);
+    }
+    if (val &lt; root-&gt;data) {
+        root-&gt;left = insert(root-&gt;left, val);
+    } else if (val &gt; root-&gt;data) {
+        root-&gt;right = insert(root-&gt;right, val);
+    }
+    retur">
+ <div class="top"><div class="title"><span class="num">02</span><div><small>PROGRAM 02</small><h2>bst.cpp</h2></div></div>
+ <button onclick="copyCode('code2',this)">⧉ Copy Code</button></div>
+ <pre><code id="code2">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int val) {
+        data = val;
+        left = nullptr;
+        right = nullptr;
+    }
+};
+
+Node* insert(Node* root, int val) {
+    
+    if (root == nullptr) {
+        return new Node(val);
+    }
+    if (val &lt; root-&gt;data) {
+        root-&gt;left = insert(root-&gt;left, val);
+    } else if (val &gt; root-&gt;data) {
+        root-&gt;right = insert(root-&gt;right, val);
+    }
+    return root;
+}
+
+void inorder(Node* root) {
+    if (root == nullptr) return;
+    inorder(root-&gt;left);
+    cout &lt;&lt; root-&gt;data &lt;&lt; &quot; &quot;;
+    inorder(root-&gt;right);
+}
+
+int longestPath(Node* root) {
+    if (root == nullptr) {
+        return 0;
+    }
+    int leftHeight = longestPath(root-&gt;left);
+    int rightHeight = longestPath(root-&gt;right);
+    return max(leftHeight, rightHeight) + 1;
+}
+
+int findMin(Node* root) {
+    if (root == nullptr) {
+        cout &lt;&lt; &quot;Tree is empty!&quot; &lt;&lt; endl;
+        return -1;
+    }
+    Node* current = root;
+    while (current-&gt;left != nullptr) {
+        current = current-&gt;left; 
+    }
+    return current-&gt;data;
+}
+void mirrorTree(Node* root) {
+    if (root == nullptr) {
+        return;
+    }
+    
+    Node* temp = root-&gt;left;
+    root-&gt;left = root-&gt;right;
+    root-&gt;right = temp;
+    
+    mirrorTree(root-&gt;left);
+    mirrorTree(root-&gt;right);
+}
+
+bool searchBST(Node* root, int key) {
+    if (root == nullptr) {
+        return false;
+    }
+    if (root-&gt;data == key) {
+        return true;
+    }
+    if (key &gt; root-&gt;data) {
+        return searchBST(root-&gt;left, key);
+    } else {
+        return searchBST(root-&gt;right, key);
+    }
+}
+int main() {
+	cout&lt;&lt;&quot;Tejal Vikas Rajule&quot;&lt;&lt;endl;
+    Node* root = nullptr;
+    
+    int initialValues[] = {50, 30, 70, 20, 40, 60, 80};
+    for (int val : initialValues) {
+        root = insert(root, val);
+    }
+    cout &lt;&lt; &quot;=== BST Operations &amp; Exemplar Verification ==-\n\n&quot;;
+    
+    cout &lt;&lt; &quot;1. Initial BST Inorder Traversal: &quot;;
+    inorder(root);
+    cout &lt;&lt; &quot;\n\n&quot;;
+    
+    cout &lt;&lt; &quot;i. Inserting 25 into the BST...\n&quot;;
+    root = insert(root, 25);
+    cout &lt;&lt; &quot;   Updated BST Inorder Traversal: &quot;;
+    inorder(root);
+    cout &lt;&lt; &quot;\n\n&quot;;
+    
+    int pathLength = longestPath(root);
+    cout &lt;&lt; &quot;ii. Longest path from root (Height in nodes): &quot; &lt;&lt; pathLength &lt;&lt; &quot; nodes\n\n&quot;;
+    
+    int minValue = findMin(root);
+    cout &lt;&lt; &quot;iii. Minimum data value in BST: &quot; &lt;&lt; minValue &lt;&lt; &quot;\n\n&quot;;
+    
+    cout &lt;&lt; &quot;iv. Mirroring the tree (swapping left and right pointers at every node)...\n&quot;;
+    mirrorTree(root);
+    cout &lt;&lt; &quot;    Inorder Traversal after Mirroring: &quot;;
+    inorder(root);
+    cout &lt;&lt; &quot;\n\n&quot;;
+    
+    cout &lt;&lt; &quot;v. Searching values:\n&quot;;
+    int searchKeys[] = {60, 90};
+    for (int key : searchKeys) {
+        if (searchBST(root, key)) {
+            cout &lt;&lt; &quot;   Search &quot; &lt;&lt; key &lt;&lt; &quot; -&gt; Found\n&quot;;
+        } else {
+            cout &lt;&lt; &quot;   Search &quot; &lt;&lt; key &lt;&lt; &quot; -&gt; Not Found\n&quot;;
+        }
+    }
+    return 0;
+}
+</code></pre>
+</article>
+<article class="card" data-search="bubblesort.cpp #include &lt;iostream&gt;
+using namespace std;
+void selectionsort(float a[], int n)
+{
+	int comparisons = 0;
+	for(int i = 0; i&lt;n-1; i++)
+	{
+		int min = i;
+		for(int j = i+1; j&lt;n; j++)
+		{
+			comparisons++;
+			if(a[j] &lt; a[min])
+			min = j;
+		}
+		float temp = a[i];
+		a[i] = a[min];
+		a[min] = temp;
+	}
+	cout&lt;&lt;&quot;\nsorted percentage:\n&quot;;
+	for(int i =0; i&lt;n; i++)
+	cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;
+	
+	cout &lt;&lt; &quot;\n top five scores:&quot;;
+	for(int i = n-1; i&gt;=n-5 &amp;&amp; i&gt;=0; i--)
+	cout &lt;&lt; a[i]&lt;&lt;&quot; &quot;;
+	
+	cout &lt;&lt; &quot;\ntotal comparisons =">
+ <div class="top"><div class="title"><span class="num">03</span><div><small>PROGRAM 03</small><h2>bubblesort.cpp</h2></div></div>
+ <button onclick="copyCode('code3',this)">⧉ Copy Code</button></div>
+ <pre><code id="code3">#include &lt;iostream&gt;
+using namespace std;
+void selectionsort(float a[], int n)
+{
+	int Comparisons = 0;
+	for(int i = 0; i&lt;n-1; i++)
+	{
+		int min = i;
+		for(int j = i+1; j&lt;n; j++)
+		{
+			Comparisons++;
+			if(a[j] &lt; a[min])
+			min = j;
+		}
+		float temp = a[i];
+		a[i] = a[min];
+		a[min] = temp;
+	}
+	cout&lt;&lt;&quot;\nsorted percentage:\n&quot;;
+	for(int i =0; i&lt;n; i++)
+	cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;
+	
+	cout &lt;&lt; &quot;\n Top Five Scores:&quot;;
+	for(int i = n-1; i&gt;=n-5 &amp;&amp; i&gt;=0; i--)
+	cout &lt;&lt; a[i]&lt;&lt;&quot; &quot;;
+	
+	cout &lt;&lt; &quot;\nTotal Comparisons = &quot; &lt;&lt;Comparisons&lt;&lt;endl;
+}
+void bubblesort(float a[], int n)
+{
+	int Comparisons = 0;
+	for(int i = 0; i&lt;n-1; i++)
+	{
+		for(int j = 0; j&lt;n-i-1; j++)
+	{
+		Comparisons++;
+		if(a[j] &gt; a[j+1])
+		{
+			float temp = a[j];
+			a[j] = a[j+1];
+			a[j+1] = temp;
+		}
+	}
+}
+cout&lt;&lt;&quot;\n sorted percentage:\n&quot;;
+for(int i=0; i&lt;n; i++)
+cout&lt;&lt;a[i]&lt;&lt;&quot; &quot;;
+cout&lt;&lt;&quot;\nTop Five Scores:&quot;;
+for(int i = n-1; i&gt;=n-5 &amp;&amp; i&gt;=0; i--)
+cout&lt;&lt;a[i]&lt;&lt;&quot; &quot;;
+cout&lt;&lt;&quot;\nTotal Comparisons=&quot; &lt;&lt;Comparisons&lt;&lt;endl;
+}
+int main()
+{
+  cout &lt;&lt; &quot;Name: Rajule Tejal Vikas&quot; &lt;&lt; endl;
+
+	int n, choice;
+	cout&lt;&lt;&quot;Enter number of students:&quot;;
+	cin&gt;&gt;n;
+	float per[n],temp[n];
+	cout&lt;&lt;&quot;Enter percentage:\n&quot;;
+	for(int i=0; i&lt;n; i++)
+	cin&gt;&gt;per[i];
+	do
+	{
+		for(int i=0; i&lt;n; i++)
+	    temp[i] = per[i];
+	    
+	    cout&lt;&lt;&quot;\n===Menu===&quot;;
+	    cout&lt;&lt;&quot;\n1.selection sort&quot;;
+	    cout&lt;&lt;&quot;\n2.bubble sort&quot;;
+	    cout&lt;&lt;&quot;\n3.Exit&quot;;
+	    cout&lt;&lt;&quot;\nEnter Choice: &quot;;
+	    cin&gt;&gt;choice;
+	    switch(choice)
+{
+    case 1:
+    	cout&lt;&lt;&quot;\n---selection sorting---\n&quot;;
+    	selectionsort(temp,n);
+    	break;
+    case 2:
+    	cout&lt;&lt;&quot;\n---bubble sorting---\n&quot;;
+    	bubblesort(temp,n);
+    	break;
+    case 3:
+    	cout&lt;&lt;&quot;\nProgram Terminated &quot;;
+    	break;
+    default:
+    	cout&lt;&lt;&quot;\nInvalid choice!&quot;;
+    	cout&lt;&lt;&quot;\nPlease enter correct choice!&quot;;
+    }
+} while(choice != 3);
+  return 0;
+} 
+</code></pre>
+</article>
+<article class="card" data-search="collisionno.8.cpp #include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;limits&gt;
+using namespace std;
+
+struct node
+{
+    string name;
+    string phone;
+    node* next;
+
+    node(string n, string p)
+    {
+        name = n;
+        phone = p;
+        next = null;
+    }
+};
+
+class hashtable
+{
+    node** table;
+    int size;
+
+public:
+    hashtable(int s)
+    {
+        size = s;
+        table = new node*[size];
+
+        for (int i = 0; i &lt; size; i++)
+        {
+            table[i] = null;
+        }
+    }
+
+    int hashfunction">
+ <div class="top"><div class="title"><span class="num">04</span><div><small>PROGRAM 04</small><h2>collisionno.8.cpp</h2></div></div>
+ <button onclick="copyCode('code4',this)">⧉ Copy Code</button></div>
+ <pre><code id="code4">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;limits&gt;
+using namespace std;
+
+struct Node
+{
+    string name;
+    string phone;
+    Node* next;
+
+    Node(string n, string p)
+    {
+        name = n;
+        phone = p;
+        next = NULL;
+    }
+};
+
+class HashTable
+{
+    Node** table;
+    int size;
+
+public:
+    HashTable(int s)
+    {
+        size = s;
+        table = new Node*[size];
+
+        for (int i = 0; i &lt; size; i++)
+        {
+            table[i] = NULL;
+        }
+    }
+
+    int hashFunction(string name)
+    {
+        int sum = 0;
+
+        for (int i = 0; i &lt; name.length(); i++)
+        {
+            sum += (unsigned char)name[i];
+        }
+
+        return sum % size;
+    }
+
+    void insert(string name, string phone)
+    {
+        int index = hashFunction(name);
+        Node* newNode = new Node(name, phone);
+
+        if (table[index] == NULL)
+        {
+            table[index] = newNode;
+        }
+        else
+        {
+            Node* temp = table[index];
+
+            while (temp-&gt;next != NULL)
+            {
+                temp = temp-&gt;next;
+            }
+
+            temp-&gt;next = newNode;
+        }
+
+        cout &lt;&lt; &quot;Contact inserted at index &quot;
+             &lt;&lt; index &lt;&lt; endl;
+    }
+
+    void display()
+    {
+        cout &lt;&lt; &quot;\n===== TELEPHONE DIRECTORY =====\n&quot;;
+
+        for (int i = 0; i &lt; size; i++)
+        {
+            cout &lt;&lt; i &lt;&lt; &quot;: &quot;;
+
+            Node* temp = table[i];
+
+            if (temp == NULL)
+            {
+                cout &lt;&lt; &quot;NULL&quot;;
+            }
+            else
+            {
+                while (temp != NULL)
+                {
+                    cout &lt;&lt; &quot;[&quot; &lt;&lt; temp-&gt;name
+                         &lt;&lt; &quot; : &quot; &lt;&lt; temp-&gt;phone &lt;&lt; &quot;]&quot;;
+
+                    if (temp-&gt;next != NULL)
+                    {
+                        cout &lt;&lt; &quot; -&gt; &quot;;
+                    }
+
+                    temp = temp-&gt;next;
+                }
+            }
+
+            cout &lt;&lt; endl;
+        }
+    }
+
+    void search(string name)
+    {
+        int index = hashFunction(name);
+        Node* temp = table[index];
+
+        while (temp != NULL)
+        {
+            if (temp-&gt;name == name)
+            {
+                cout &lt;&lt; &quot;\nContact Found!&quot; &lt;&lt; endl;
+                cout &lt;&lt; &quot;Name: &quot; &lt;&lt; temp-&gt;name &lt;&lt; endl;
+                cout &lt;&lt; &quot;Phone: &quot; &lt;&lt; temp-&gt;phone &lt;&lt; endl;
+                return;
+            }
+
+            temp = temp-&gt;next;
+        }
+
+        cout &lt;&lt; &quot;\nContact Not Found!&quot; &lt;&lt; endl;
+    }
+
+    ~HashTable()
+    {
+        for (int i = 0; i &lt; size; i++)
+        {
+            Node* temp = table[i];
+
+            while (temp != NULL)
+            {
+                Node* nextNode = temp-&gt;next;
+                delete temp;
+                temp = nextNode;
+            }
+        }
+
+        delete[] table;
+    }
+};
+
+int main()
+{
+	cout&lt;&lt;&quot;Name:Tejal Vikas Rajule\n&quot;&lt;&lt;&quot;Roll no:225&quot;&lt;&lt;endl;
+    int size, n;
+    string name, phone;
+
+    cout &lt;&lt; &quot;Enter hash table size: &quot;;
+
+    if (!(cin &gt;&gt; size) || size &lt;= 0)
+    {
+        cout &lt;&lt; &quot;Invalid hash table size!&quot; &lt;&lt; endl;
+        return 1;
+    }
+
+    HashTable h(size);
+
+    cout &lt;&lt; &quot;Enter number of contacts: &quot;;
+
+    if (!(cin &gt;&gt; n) || n &lt; 0)
+    {
+        cout &lt;&lt; &quot;Invalid number of contacts!&quot; &lt;&lt; endl;
+        return 1;
+    }
+
+    for (int i = 0; i &lt; n; i++)
+    {
+        cout &lt;&lt; &quot;Enter name: &quot;;
+        cin &gt;&gt; name;
+
+        cout &lt;&lt; &quot;Enter phone number: &quot;;
+        cin &gt;&gt; phone;
+
+        h.insert(name, phone);
+    }
+
+    h.display();
+
+    cout &lt;&lt; &quot;\nEnter name to search: &quot;;
+    cin &gt;&gt; name;
+
+    h.search(name);
+
+    return 0;
+}
+</code></pre>
+</article>
+<article class="card" data-search="graph.cpp #include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+#include &lt;map&gt;
+#include &lt;set&gt;
+using namespace std;
+
+class flightgraph {
+
+    map&lt;string, vector&lt;pair&lt;string, float&gt;&gt;&gt; adjlist;
+public:
+    
+    void addflight(string u, string v, float time) {
+        adjlist[u].push_back({v, time});
+    }
+    
+    void displayadjacencylist() {
+        cout &lt;&lt; &quot;\n--- flight network adjacency list ---\n&quot;;
+        for (auto pair : adjlist) {
+            cout &lt;&lt; pair.first &lt;&lt; &quot; -&gt; &quot;;
+            for (auto neig">
+ <div class="top"><div class="title"><span class="num">05</span><div><small>PROGRAM 05</small><h2>graph.cpp</h2></div></div>
+ <button onclick="copyCode('code5',this)">⧉ Copy Code</button></div>
+ <pre><code id="code5">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+#include &lt;map&gt;
+#include &lt;set&gt;
+using namespace std;
+
+class FlightGraph {
+
+    map&lt;string, vector&lt;pair&lt;string, float&gt;&gt;&gt; adjList;
+public:
+    
+    void addFlight(string u, string v, float time) {
+        adjList[u].push_back({v, time});
+    }
+    
+    void displayAdjacencyList() {
+        cout &lt;&lt; &quot;\n--- Flight Network Adjacency List ---\n&quot;;
+        for (auto pair : adjList) {
+            cout &lt;&lt; pair.first &lt;&lt; &quot; -&gt; &quot;;
+            for (auto neighbor : pair.second) {
+                cout &lt;&lt; &quot;[&quot; &lt;&lt; neighbor.first &lt;&lt; &quot;, &quot; &lt;&lt; neighbor.second &lt;&lt; &quot; hrs] &quot;;
+            }
+            cout &lt;&lt; endl;
+        }
+    }
+    
+    void DFS(string currentCity, set&lt;string&gt;&amp; visited) {
+        visited.insert(currentCity); 
+        cout &lt;&lt; currentCity &lt;&lt; &quot; -&gt; &quot;;
+        
+        for (auto neighbor : adjList[currentCity]) {
+            string nextCity = neighbor.first;
+            if (visited.find(nextCity) == visited.end()) {
+                DFS(nextCity, visited);
+            }
+        }
+    }
+    bool checkConnectivity(string startCity, int totalCities) {
+        set&lt;string&gt; visited;
+ cout &lt;&lt; &quot;\nDFS Traversal starting from &quot; &lt;&lt; startCity &lt;&lt; &quot;:\n&quot;;
+        DFS(startCity, visited);
+        cout &lt;&lt; &quot;END\n&quot;;
+        
+        if (visited.size() == totalCities) {
+            cout &lt;&lt; &quot;\nResult: All &quot; &lt;&lt; totalCities &lt;&lt; &quot; cities are reachable! The graph is connected.\n&quot;;
+            return true;
+        } else {
+            cout &lt;&lt; &quot;\nResult: Only &quot; &lt;&lt; visited.size() &lt;&lt; &quot; out of &quot; &lt;&lt; totalCities &lt;&lt; &quot; cities are reachable. Graph is not fully connected.\n&quot;;
+            return false;
+        }
+    }
+};
+int main() {
+	cout&lt;&lt;&quot;Name:Tejal Vikas Rajule\n&quot;;
+    FlightGraph network;
+    
+    int totalCities = 5;
+    
+    network.addFlight(&quot;Mumbai&quot;, &quot;Delhi&quot;, 2.0);
+    network.addFlight(&quot;Mumbai&quot;, &quot;Pune&quot;, 0.5);
+    
+    network.addFlight(&quot;Delhi&quot;, &quot;Bangalore&quot;, 2.5);
+    
+    network.addFlight(&quot;Pune&quot;, &quot;Bangalore&quot;, 1.5);
+    
+    network.addFlight(&quot;Bangalore&quot;, &quot;Chennai&quot;, 1.0);
+    
+    network.displayAdjacencyList();
+    
+    network.checkConnectivity(&quot;Mumbai&quot;, totalCities);
+    return 0;
+}
+</code></pre>
+</article>
+<article class="card" data-search="linearsearch.cpp #include &lt;iostream&gt;
+#include &lt;algorithm&gt; 
+using namespace std;
+
+void linearsearch(int arr[], int n, int key)//linear search function
+{
+	int comparisons = 0;
+	
+	for(int i=0; i&lt;n; i++)
+	{
+		comparisons ++;
+		
+		if(arr[i] == key)
+		{
+			cout&lt;&lt; &quot;\n student attended the session.&quot;;
+			cout&lt;&lt; &quot;\nposition :&quot; &lt;&lt;i+1;
+			cout&lt;&lt; &quot;\ntotal comparisons =&quot;&lt;&lt;comparisons&lt;&lt;endl;
+			return;
+		}
+	}
+	cout&lt;&lt; &quot;\n student did not attended the session,&quot;;
+	cout&lt;&lt; &quot;\n total comparisons = &quot;&lt;&lt;comparisons&lt;&lt;endl;
+}
+	void binar">
+ <div class="top"><div class="title"><span class="num">06</span><div><small>PROGRAM 06</small><h2>linearsearch.cpp</h2></div></div>
+ <button onclick="copyCode('code6',this)">⧉ Copy Code</button></div>
+ <pre><code id="code6">#include &lt;iostream&gt;
+#include &lt;algorithm&gt; 
+using namespace std;
+
+void linearsearch(int arr[], int n, int key)//linear search function
+{
+	int Comparisons = 0;
+	
+	for(int i=0; i&lt;n; i++)
+	{
+		Comparisons ++;
+		
+		if(arr[i] == key)
+		{
+			cout&lt;&lt; &quot;\n Student attended the session.&quot;;
+			cout&lt;&lt; &quot;\nPosition :&quot; &lt;&lt;i+1;
+			cout&lt;&lt; &quot;\nTotal Comparisons =&quot;&lt;&lt;Comparisons&lt;&lt;endl;
+			return;
+		}
+	}
+	cout&lt;&lt; &quot;\n Student did not attended the session,&quot;;
+	cout&lt;&lt; &quot;\n Total Comparisons = &quot;&lt;&lt;Comparisons&lt;&lt;endl;
+}
+	void BinarySearch(int arr[], int n, int key)//binary function search
+	{
+		sort(arr,arr+n);
+		
+		int low = 0;
+		int high = n-1;
+		int Comparisons = 0;
+		
+		while(low&lt;=high)
+		{
+			Comparisons ++;
+			
+			int mid= (low + high) / 2;
+			
+			if(arr[mid] == key)
+			{
+				cout&lt;&lt; &quot;\nStudent attended the session.&quot;;
+				cout&lt;&lt; &quot;\nPosition in sorted array: &quot;&lt;&lt;mid + 1;
+				cout&lt;&lt; &quot;\nTotal Comparisons = &quot;&lt;&lt;Comparisons &lt;&lt;endl;
+				return;
+			}
+			else if (key&lt;arr[mid])
+			{
+				high = mid-1;
+			}
+			else
+		    {
+		    	low = mid+1;
+	     	}
+		}
+		cout&lt;&lt; &quot;\n Student did not attended the session&quot;;
+		cout&lt;&lt; &quot;\n Total Comparisons = &quot; &lt;&lt; Comparisons &lt;&lt;endl;		
+	}
+	
+	int main()
+	{
+		cout&lt;&lt;&quot;Name : Tejal Vikas Rajule&quot;&lt;&lt;endl;
+		int n, choice, key;
+		
+		cout&lt;&lt; &quot;enter number of Student: &quot;;
+		cin&gt;&gt;n;
+		
+		int arr[n];
+		
+		cout&lt;&lt; &quot;\Enter roll number: \n&quot;;
+		
+		for(int i= 0; i&lt;n; i++)
+		 cin&gt;&gt;arr[i];
+		 
+		 do
+		 {
+		 	cout&lt;&lt; &quot;\n ====MENU==== \n&quot;;
+		 	cout&lt;&lt; &quot;1.Linear Search \n &quot;;
+		 	cout&lt;&lt; &quot;2.Binary Search \n&quot;;
+		 	cout&lt;&lt; &quot;3.Exit \n&quot;;
+		 	cout&lt;&lt; &quot;Enter the choice: &quot;;
+		 	cin&gt;&gt;choice;
+		 	
+		 	switch(choice)
+		 	{
+		 		
+		 		case 1:
+		 			cout&lt;&lt; &quot;Enter roll number to search:&quot;;
+		 			
+		 			cin &gt;&gt;key;
+		 			linearSearch(arr, n, key);
+		 			break;
+		 			
+		 		case 2:
+				 cout&lt;&lt; &quot;Enter roll number to Search:&quot;;
+				 cin&gt;&gt;key;
+				 BinarySearch(arr, n, key);
+				 break;
+				 	
+				case 3:
+					cout&lt;&lt;&quot;\nProgram Terminated&quot;;
+					break;
+					
+					default:
+					cout&lt;&lt;&quot;\nInvalid choice!&quot;;
+					
+				}
+			    } while (choice ! = 3);
+			     return 0;
+			 
+		 }
+</code></pre>
+</article>
+<article class="card" data-search="linkedlist.cpp #include &lt;iostream&gt;
+using namespace std;
+
+struct node {
+    int data;
+    node* prev;
+    node* next;
+};
+
+void appendbit(node*&amp; head, node*&amp; tail, int bit) {
+    node* newnode = new node();
+    newnode-&gt;data = bit;
+    newnode-&gt;next = null;
+    newnode-&gt;prev = tail;
+
+    if (head == null) {
+        head = newnode;
+    } else {
+        tail-&gt;next = newnode;
+    }
+    tail = newnode;
+}
+
+void display(node* head) {
+    node* temp = head;
+    while(temp != null) {
+        cout &lt;&lt; temp-&gt;data;
+        ">
+ <div class="top"><div class="title"><span class="num">07</span><div><small>PROGRAM 07</small><h2>Linkedlist.cpp</h2></div></div>
+ <button onclick="copyCode('code7',this)">⧉ Copy Code</button></div>
+ <pre><code id="code7">#include &lt;iostream&gt;
+using namespace std;
+
+struct Node {
+    int data;
+    Node* prev;
+    Node* next;
+};
+
+void appendBit(Node*&amp; head, Node*&amp; tail, int bit) {
+    Node* newNode = new Node();
+    newNode-&gt;data = bit;
+    newNode-&gt;next = NULL;
+    newNode-&gt;prev = tail;
+
+    if (head == NULL) {
+        head = newNode;
+    } else {
+        tail-&gt;next = newNode;
+    }
+    tail = newNode;
+}
+
+void display(Node* head) {
+    Node* temp = head;
+    while(temp != NULL) {
+        cout &lt;&lt; temp-&gt;data;
+        temp = temp-&gt;next;
+    }
+    cout &lt;&lt; endl;
+}
+
+Node* getOnesComplement(Node* head) {
+    Node* compHead = NULL;
+    Node* compTail = NULL;
+    Node* temp = head;
+
+    while (temp != NULL) {
+        int flippedBit = (temp-&gt;data == 0) ? 1 : 0;
+        appendBit(compHead, compTail, flippedBit);
+        temp = temp-&gt;next;
+    }
+    return compHead;
+}
+
+Node* getTowsComplement(Node* head) {
+    Node* onesCompHead = getOnesComplement(head);
+    Node* temp = onesCompHead;
+
+    while (temp-&gt;next != NULL) {
+        temp = temp-&gt;next;
+    }
+
+    int carry = 1;
+    while (temp != NULL) {
+        int sum = temp-&gt;data + carry;
+        temp-&gt;data = sum % 2;
+        carry = sum / 2;
+        temp = temp-&gt;prev;
+    }
+
+    if (carry == 1) {
+        Node* newHead = new Node();
+        newHead-&gt;data = 1;
+        newHead-&gt;prev = NULL;
+        newHead-&gt;next = onesCompHead;
+        onesCompHead-&gt;prev = newHead;
+        onesCompHead = newHead;
+    }
+
+    return onesCompHead;
+}
+
+Node* addBinary(Node* head1, Node* head2) {
+    Node* sumHead = NULL;
+    Node* sumTail = NULL;
+    Node* t1 = head1;
+    Node* t2 = head2;
+
+    while (t1 &amp;&amp; t1-&gt;next) t1 = t1-&gt;next;
+    while (t2 &amp;&amp; t2-&gt;next) t2 = t2-&gt;next;
+
+    int carry = 0;
+
+    while (t1 != NULL || t2 != NULL || carry != 0) {
+        int b1 = (t1 != NULL) ? t1-&gt;data : 0;
+        int b2 = (t2 != NULL) ? t2-&gt;data : 0;
+        int sum = b1 + b2 + carry;
+        int bitResult = sum % 2;
+        carry = sum / 2;
+
+        Node* newNode = new Node();
+        newNode-&gt;data = bitResult;
+        newNode-&gt;prev = NULL;
+        newNode-&gt;next = sumHead;
+
+        if (sumHead != NULL) {
+            sumHead-&gt;prev = newNode;
+        }
+
+        sumHead = newNode;
+
+        if (t1) t1 = t1-&gt;prev;
+        if (t2) t2 = t2-&gt;prev;
+    }
+
+    return sumHead;
+}
+
+int main() {
+    cout &lt;&lt; &quot;Name: Tejal Vikas Rajule\n&quot; &lt;&lt; &quot;Roll no: 225&quot; &lt;&lt; endl;
+
+    Node* num1Head = NULL; Node* num1Tail = NULL;
+    Node* num2Head = NULL; Node* num2Tail = NULL;
+
+    string s1, s2;
+    cout &lt;&lt; &quot;Enter first binary number: &quot;;
+    cin &gt;&gt; s1;
+
+    for (char c : s1) appendBit(num1Head, num1Tail, c - &#x27;0&#x27;);
+
+    cout &lt;&lt; &quot;Enter second binary number: &quot;;
+    cin &gt;&gt; s2;
+
+    for(char c : s2) appendBit(num2Head, num2Tail, c - &#x27;0&#x27;);
+
+    cout &lt;&lt; &quot;\n1&#x27;s Complement of 1st number: &quot;;
+    Node* ones = getOnesComplement(num1Head);
+    display(ones);
+
+    cout &lt;&lt; &quot;2&#x27;s Complement of 1st number: &quot;;
+    Node* twos = getTowsComplement(num1Head);
+    display(twos);
+
+    cout &lt;&lt; &quot;Addition of both binary numbers: &quot;;
+    Node* sum = addBinary(num1Head, num2Head);
+    display(sum);
+
+    return 0;
+}
+</code></pre>
+</article>
+<article class="card" data-search="pinacleclub.cpp #include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+struct node
+{
+    int prn;
+    string name;
+    node* next;
+};
+
+node* createnode() {
+    node* newnode = new node();
+    cout &lt;&lt; &quot;enter prn: &quot;;
+    cin &gt;&gt; newnode-&gt;prn;
+    cout &lt;&lt; &quot;enter name: &quot;;
+    cin &gt;&gt; newnode-&gt;name;
+    newnode-&gt;next = null;
+    return newnode;
+}
+
+void addpresident(node*&amp; head) {
+    node* newnode = createnode();
+    newnode-&gt;next = head;
+    head = newnode;
+}
+
+void addsecretary(node*&amp; head) {
+    node* newnode =">
+ <div class="top"><div class="title"><span class="num">08</span><div><small>PROGRAM 08</small><h2>pinacleclub.cpp</h2></div></div>
+ <button onclick="copyCode('code8',this)">⧉ Copy Code</button></div>
+ <pre><code id="code8">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+struct Node
+{
+    int prn;
+    string name;
+    Node* next;
+};
+
+Node* createNode() {
+    Node* newNode = new Node();
+    cout &lt;&lt; &quot;Enter PRN: &quot;;
+    cin &gt;&gt; newNode-&gt;prn;
+    cout &lt;&lt; &quot;Enter Name: &quot;;
+    cin &gt;&gt; newNode-&gt;name;
+    newNode-&gt;next = NULL;
+    return newNode;
+}
+
+void addPresident(Node*&amp; head) {
+    Node* newNode = createNode();
+    newNode-&gt;next = head;
+    head = newNode;
+}
+
+void addSecretary(Node*&amp; head) {
+    Node* newNode = createNode();
+    if (head == NULL) {
+        head = newNode;
+        return;
+    }
+    Node* temp = head;
+    while (temp-&gt;next != NULL) temp = temp-&gt;next;
+    temp-&gt;next = newNode;
+}
+
+void addMember(Node* head) {
+    if(head == NULL || head-&gt;next == NULL) {
+        cout &lt;&lt; &quot;Add President and Secretary first!\n&quot;;
+        return;
+    }
+    Node* newNode = createNode();
+    Node* temp = head;
+    while (temp-&gt;next-&gt;next != NULL) temp = temp-&gt;next;
+    newNode-&gt;next = temp-&gt;next;
+    temp-&gt;next = newNode;
+}
+
+void deletePresident(Node*&amp; head) {
+    if (head == NULL) return;
+    Node* temp = head;
+    head = head-&gt;next;
+    delete temp;
+}
+
+void deleteSecretary(Node*&amp; head) {
+    if (head == NULL) return;
+    if (head-&gt;next == NULL) {
+        delete head;
+        head = NULL;
+        return;
+    }
+    Node* temp = head;
+    while (temp-&gt;next-&gt;next != NULL) temp = temp-&gt;next;
+    delete temp-&gt;next;
+    temp-&gt;next = NULL;
+}
+
+void deleteMember(Node*&amp; head) {
+    int prn;
+    cout &lt;&lt; &quot;Enter PRN to delete: &quot;;
+    cin &gt;&gt; prn;
+    if (head == NULL) return;
+    if(head-&gt;prn == prn) { deletePresident(head); return; }
+    Node* temp = head, *prev = NULL;
+    while(temp != NULL &amp;&amp; temp-&gt;prn != prn) {
+        prev = temp;
+        temp = temp-&gt;next;
+    }
+    if(temp == NULL) {
+        cout &lt;&lt; &quot;PRN not found!\n&quot;;
+        return;
+    }
+    prev-&gt;next = temp-&gt;next;
+    delete temp;
+}
+
+int countMembers(Node* head) {
+    int count = 0;
+    while (head != NULL) {
+        count++;
+        head = head-&gt;next;
+    }
+    return count;
+}
+
+void display(Node* head) {
+    if (head == NULL) {
+        cout &lt;&lt; &quot;List is empty!\n&quot;;
+        return;
+    }
+    cout &lt;&lt; &quot;\nPRN\tName\tRole\n&quot;;
+    Node* temp = head;
+    while (temp != NULL) {
+        cout &lt;&lt; temp-&gt;prn &lt;&lt; &quot;\t&quot; &lt;&lt; temp-&gt;name;
+        if(temp == head) cout &lt;&lt; &quot;\t(President)\n&quot;;
+        else if (temp-&gt;next == NULL) cout &lt;&lt; &quot;\t(Secretary)\n&quot;;
+        else cout &lt;&lt; &quot;\t(Member)\n&quot;;
+        temp = temp-&gt;next;
+    }
+}
+
+Node* concatenate(Node* head1, Node* head2) {
+    if(head1 == NULL) return head2;
+    if(head2 == NULL) return head1;
+    Node* temp = head1;
+    while (temp-&gt;next != NULL) temp = temp-&gt;next;
+    temp-&gt;next = head2;
+    return head1;
+}
+
+int main() {
+	cout&lt;&lt;&quot;Name: Tejal Vikas Rajule\n&quot;&lt;&lt;&quot;Roll no.225&quot;&lt;&lt;endl;
+    Node* divA = NULL;
+    Node* divB = NULL;
+    int choice;
+
+    do {
+        cout &lt;&lt; &quot;\n---PINNACLE CLUB---\n&quot;;
+        cout &lt;&lt; &quot;1. Add President\n2. Add Secretary\n3. Add Member\n&quot;;
+        cout &lt;&lt; &quot;4. Delete President\n5. Delete Secretary\n6. Delete Member\n&quot;;
+        cout &lt;&lt; &quot;7. Count Members\n8. Display Members\n9. Concatenate Div A into Div B\n10. Exit\n&quot;;
+        cout &lt;&lt; &quot;Choice: &quot;;
+        cin &gt;&gt; choice;
+
+        if (choice == 1) addPresident(divA);
+        else if (choice == 2) addSecretary(divA);
+        else if (choice == 3) addMember(divA);
+        else if (choice == 4) deletePresident(divA);
+        else if (choice == 5) deleteSecretary(divA);
+        else if (choice == 6) deleteMember(divA);
+        else if (choice == 7) cout &lt;&lt; &quot;Total: &quot; &lt;&lt; countMembers(divA) &lt;&lt; endl;
+        else if (choice == 8) display(divA);
+        else if (choice == 9) {
+            cout &lt;&lt; &quot;\nEnter details for division B:\n&quot;;
+            addPresident(divB);
+            addSecretary(divB);
+            divA = concatenate(divA, divB);
+            cout &lt;&lt; &quot;Lists Concatenated!\n&quot;;
+        }
+
+    } while (choice != 10);
+
+    return 0;
+}
+</code></pre>
+</article>
+<article class="card" data-search="probing.cpp #include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+const int table_size = 10;
+
+struct client {
+    string name;
+    string phone;
+    bool occupied;
+
+    client() {
+        name = &quot;&quot;;
+        phone = &quot;&quot;;
+        occupied = false;
+    }
+};
+
+class telephonedirectory {
+private:
+    client table[table_size];
+
+    // hash function
+    int hashfunction(string name) {
+        int hash = 0;
+
+        for (char ch : name) {
+            hash = (hash * 31 + ch) % table_size;
+        }
+
+        retu">
+ <div class="top"><div class="title"><span class="num">09</span><div><small>PROGRAM 09</small><h2>Probing.cpp</h2></div></div>
+ <button onclick="copyCode('code9',this)">⧉ Copy Code</button></div>
+ <pre><code id="code9">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+const int TABLE_SIZE = 10;
+
+struct Client {
+    string name;
+    string phone;
+    bool occupied;
+
+    Client() {
+        name = &quot;&quot;;
+        phone = &quot;&quot;;
+        occupied = false;
+    }
+};
+
+class TelephoneDirectory {
+private:
+    Client table[TABLE_SIZE];
+
+    // Hash function
+    int hashFunction(string name) {
+        int hash = 0;
+
+        for (char ch : name) {
+            hash = (hash * 31 + ch) % TABLE_SIZE;
+        }
+
+        return hash;
+    }
+
+public:
+
+    // ---------------- LINEAR PROBING ----------------
+    void insertLinear(string name, string phone) {
+        int index = hashFunction(name);
+        int start = index;
+
+        while (table[index].occupied) {
+            index = (index + 1) % TABLE_SIZE;
+
+            // Table is full
+            if (index == start) {
+                cout &lt;&lt; &quot;Hash table is full!\n&quot;;
+                return;
+            }
+        }
+
+        table[index].name = name;
+        table[index].phone = phone;
+        table[index].occupied = true;
+
+        cout &lt;&lt; &quot;Client inserted at index &quot; &lt;&lt; index &lt;&lt; endl;
+    }
+
+    // ---------------- QUADRATIC PROBING ----------------
+    void insertQuadratic(string name, string phone) {
+        int index = hashFunction(name);
+
+        for (int i = 0; i &lt; TABLE_SIZE; i++) {
+            int newIndex = (index + i * i) % TABLE_SIZE;
+
+            if (!table[newIndex].occupied) {
+                table[newIndex].name = name;
+                table[newIndex].phone = phone;
+                table[newIndex].occupied = true;
+
+                cout &lt;&lt; &quot;Client inserted at index &quot;
+                     &lt;&lt; newIndex &lt;&lt; endl;
+                return;
+            }
+        }
+
+        cout &lt;&lt; &quot;Hash table is full!\n&quot;;
+    }
+
+    // Search using linear probing
+    void searchLinear(string name) {
+        int index = hashFunction(name);
+        int start = index;
+
+        while (table[index].occupied) {
+            if (table[index].name == name) {
+                cout &lt;&lt; &quot;Telephone number of &quot; &lt;&lt; name
+                     &lt;&lt; &quot; : &quot; &lt;&lt; table[index].phone &lt;&lt; endl;
+                return;
+            }
+
+            index = (index + 1) % TABLE_SIZE;
+
+            if (index == start)
+                break;
+        }
+
+        cout &lt;&lt; &quot;Client not found!\n&quot;;
+    }
+
+    // Search using quadratic probing
+    void searchQuadratic(string name) {
+        int index = hashFunction(name);
+
+        for (int i = 0; i &lt; TABLE_SIZE; i++) {
+            int newIndex = (index + i * i) % TABLE_SIZE;
+
+            if (!table[newIndex].occupied)
+                break;
+
+            if (table[newIndex].name == name) {
+                cout &lt;&lt; &quot;Telephone number of &quot; &lt;&lt; name
+                     &lt;&lt; &quot; : &quot; &lt;&lt; table[newIndex].phone &lt;&lt; endl;
+                return;
+            }
+        }
+
+        cout &lt;&lt; &quot;Client not found!\n&quot;;
+    }
+
+    // Display hash table
+    void display() {
+        cout &lt;&lt; &quot;\n--- Telephone Directory ---\n&quot;;
+
+        for (int i = 0; i &lt; TABLE_SIZE; i++) {
+            cout &lt;&lt; &quot;Index &quot; &lt;&lt; i &lt;&lt; &quot; : &quot;;
+
+            if (table[i].occupied)
+                cout &lt;&lt; table[i].name &lt;&lt; &quot; -&gt; &quot;
+                     &lt;&lt; table[i].phone;
+            else
+                cout &lt;&lt; &quot;Empty&quot;;
+
+            cout &lt;&lt; endl;
+        }
+    }
+};
+
+int main() {
+    TelephoneDirectory directory;
+   cout &lt;&lt;&quot;Tejal Vikas Rajule\n&quot;;
+    int choice;
+    string name, phone;
+
+    do {
+        cout &lt;&lt; &quot;\n===== TELEPHONE DIRECTORY =====\n&quot;;
+        cout &lt;&lt; &quot;1. Insert using Linear Probing\n&quot;;
+        cout &lt;&lt; &quot;2. Search using Linear Probing\n&quot;;
+        cout &lt;&lt; &quot;3. Insert using Quadratic Probing\n&quot;;
+        cout &lt;&lt; &quot;4. Search using Quadratic Probing\n&quot;;
+        cout &lt;&lt; &quot;5. Display Hash Table\n&quot;;
+        cout &lt;&lt; &quot;6. Exit\n&quot;;
+        cout &lt;&lt; &quot;Enter choice: &quot;;
+        cin &gt;&gt; choice;
+
+        switch (choice) {
+
+        case 1:
+            cout &lt;&lt; &quot;Enter client name: &quot;;
+            cin &gt;&gt; name;
+
+            cout &lt;&lt; &quot;Enter telephone number: &quot;;
+            cin &gt;&gt; phone;
+
+            directory.insertLinear(name, phone);
+            break;
+
+        case 2:
+            cout &lt;&lt; &quot;Enter client name to search: &quot;;
+            cin &gt;&gt; name;
+
+            directory.searchLinear(name);
+            break;
+
+        case 3:
+            cout &lt;&lt; &quot;Enter client name: &quot;;
+            cin &gt;&gt; name;
+
+            cout &lt;&lt; &quot;Enter telephone number: &quot;;
+            cin &gt;&gt; phone;
+
+            directory.insertQuadratic(name, phone);
+            break;
+
+        case 4:
+            cout &lt;&lt; &quot;Enter client name to search: &quot;;
+            cin &gt;&gt; name;
+
+            directory.searchQuadratic(name);
+            break;
+
+        case 5:
+            directory.display();
+            break;
+
+        case 6:
+            cout &lt;&lt; &quot;Exiting...\n&quot;;
+            break;
+
+        default:
+            cout &lt;&lt; &quot;Invalid choice!\n&quot;;
+        }
+
+    } while (choice != 6);
+
+    return 0;
+}
+</code></pre>
+</article>
+<article class="card" data-search="stack.cpp #include&lt;iostream&gt;
+#include&lt;stack&gt;
+using namespace std;
+int main()
+{
+	cout &lt;&lt; &quot;name: tejal vikas rajule\nroll no: 225\n&quot;;
+	string exp;
+	stack&lt;char&gt;s;
+	bool valid = true;
+	cout&lt;&lt;&quot;enter expression: &quot;;
+	cin&gt;&gt;exp;
+	for(int i=0; i&lt;exp.length(); i++){
+	if(exp[i]==&#x27;(&#x27; || exp[i]==&#x27;{&#x27; || exp[i]==&#x27;[&#x27;)
+	{
+		s.push(exp[i]);
+	}
+	else if(exp[i]==&#x27;)&#x27;|| exp[i]==&#x27;}&#x27; || exp[i]==&#x27;]&#x27;)
+{
+	if(s.empty())
+	{
+		valid=false;
+		break;
+	}
+	char ch = s.top();
+	s.pop();
+	if((exp[i]==&#x27;)&#x27; &amp;&amp; ch != &#x27;(&#x27;) ||
+      (exp[i]== &#x27;}&#x27; &amp;">
+ <div class="top"><div class="title"><span class="num">10</span><div><small>PROGRAM 10</small><h2>stack.cpp</h2></div></div>
+ <button onclick="copyCode('code10',this)">⧉ Copy Code</button></div>
+ <pre><code id="code10">#include&lt;iostream&gt;
+#include&lt;stack&gt;
+using namespace std;
+int main()
+{
+	cout &lt;&lt; &quot;Name: Tejal Vikas Rajule\nRoll no: 225\n&quot;;
+	string exp;
+	stack&lt;char&gt;s;
+	bool valid = true;
+	cout&lt;&lt;&quot;Enter Expression: &quot;;
+	cin&gt;&gt;exp;
+	for(int i=0; i&lt;exp.length(); i++){
+	if(exp[i]==&#x27;(&#x27; || exp[i]==&#x27;{&#x27; || exp[i]==&#x27;[&#x27;)
+	{
+		s.push(exp[i]);
+	}
+	else if(exp[i]==&#x27;)&#x27;|| exp[i]==&#x27;}&#x27; || exp[i]==&#x27;]&#x27;)
+{
+	if(s.empty())
+	{
+		valid=false;
+		break;
+	}
+	char ch = s.top();
+	s.pop();
+	if((exp[i]==&#x27;)&#x27; &amp;&amp; ch != &#x27;(&#x27;) ||
+      (exp[i]== &#x27;}&#x27; &amp;&amp; ch != &#x27;{&#x27;) ||
+      (exp[i]== &#x27;]&#x27; &amp;&amp; ch != &#x27;[&#x27;))
+    {
+      	valid=false;
+      	break;
+	  }
+   }
+}
+if(!s.empty())
+    valid=false;
+    if(valid)
+    cout&lt;&lt;&quot;Expression is well parenthesized&quot;;
+else
+   cout&lt;&lt;&quot;Expression is not well parenthesized&quot;;
+   return 0;
+}
+</code></pre>
+</article></div><div id="empty">No matching program found.</div></main><footer>TS Creation · C++ Practical Code Library</footer>
+<script>
+function filterPrograms(){let q=document.getElementById('search').value.toLowerCase().trim(),cards=[...document.querySelectorAll('.card')],n=0;cards.forEach(c=>{let s=c.dataset.search.includes(q);c.style.display=s?'':'none';if(s)n++});document.getElementById('count').textContent=n+' of '+cards.length+' programs shown';document.getElementById('empty').style.display=n?'none':'block'}
+async function copyCode(id,b){let t=document.getElementById(id).innerText;try{await navigator.clipboard.writeText(t)}catch(e){let a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove()}let old=b.innerText;b.innerText='✓ Copied!';b.classList.add('done');setTimeout(()=>{b.innerText=old;b.classList.remove('done')},1500)}
+</script></body></html>
